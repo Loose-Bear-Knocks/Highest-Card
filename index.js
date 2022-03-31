@@ -5,16 +5,24 @@ const faceCards = {"JACK": 11, "QUEEN": 12, "KING": 13, "ACE": 14}
 let playAgainButton = document.getElementById('play-again')
 let x = 0
 let y = 0
+let makeCard1, makeCard2
 
 let player1WinCounter = document.getElementById('player-1-score')
 let player2WinCounter = document.getElementById('player-2-score')
 let init = document.getElementById('button')
+let player1ScoreCard = document.createElement('div')
+let player2ScoreCard  = document.createElement('div')
+player1ScoreCard.innerText = `Player 1: ${x}`
+player2ScoreCard.innerText = `Player 2: ${y}`
+player1WinCounter.appendChild(player1ScoreCard)
+player2WinCounter.appendChild(player2ScoreCard)
 const playAgain = async () => {
     let replay = document.createElement('button')
-    replay.innerText = 'PLAY AGIAN?'
+    replay.innerText = 'PLAY AGAIN?'
     replay.addEventListener('click', () => {
-        document.removeChild(makeCard1)
-        document.removeChild(makecard2)
+        player1.removeChild(makeCard1)
+        player2.removeChild(makeCard2)
+        playAgainButton.removeChild(replay)
         request()
     })
     playAgainButton.appendChild(replay)
@@ -26,8 +34,8 @@ const playAgain = async () => {
 const request = async () => {
     let req = await fetch('http://deckofcardsapi.com/api/deck/new/draw/?count=2')
     let res = await req.json()
-    let makeCard1 = document.createElement('img')
-    let makeCard2 = document.createElement('img')
+    makeCard1 = document.createElement('img')
+    makeCard2 = document.createElement('img')
     makeCard1.setAttribute('src', res.cards[0].image)
     makeCard2.setAttribute('src', res.cards[1].image)
     player1.appendChild(makeCard1)
@@ -37,15 +45,12 @@ const request = async () => {
     console.log(res)
     if(cardValue1 > cardValue2) {
         ++x, alert('Player 1 Wins!')
+        player1ScoreCard.innerText = `Player 1: ${x}`
     } else if(cardValue1 === cardValue2){
         alert("It's a tie!")
-    } else {++y, alert('Player 2 wins!')}
-    let player1ScoreCard = document.createElement('div')
-    let player2ScoreCard  = document.createElement('div')
-    player1ScoreCard.innerText = `Player 1: ${x}`
-    player2ScoreCard.innerText = `Player 2: ${y}`
-    player1WinCounter.appendChild(player1ScoreCard)
-    player2WinCounter.appendChild(player2ScoreCard)
+    } else {++y, alert('Player 2 wins!')
+        player2ScoreCard.innerText = `Player 2: ${y}`
+    }   
     playAgain()
 }
 
