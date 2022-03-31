@@ -1,3 +1,20 @@
 body {
     background-color: green;
 }
+
+.score-board {
+    height: 100px;
+    width: 300px;
+}
+
+.container-1 {
+    height: 300px;
+    width: 100px;
+    justify-content: center;
+}
+
+.container-2 {
+    height: 300px;
+    width: 100px;
+    justify-content: center;
+}

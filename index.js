@@ -2,6 +2,14 @@
 let player1 = document.getElementById('player-1')
 let player2 = document.getElementById('player-2')
 const faceCards = {"JACK": 11, "QUEEN": 12, "KING": 13, "ACE": 14}
+let playAgain = document.getElementById('play-again')
+let x = 0
+let y = 0
+
+let player1WinCounter = document.getElementById('player-1-score')
+let player2WinCounter = document.getElementById('player-2-score')
+let init = document.getElementById('button')
+
 const request = async () => {
     let req = await fetch('http://deckofcardsapi.com/api/deck/new/draw/?count=2')
     let res = await req.json()
@@ -14,41 +22,22 @@ const request = async () => {
     let cardValue1 = parseInt(res.cards[0].value) ? parseInt(res.cards[0].value) : faceCards[(res.cards[0].value)]
     let cardValue2 = parseInt(res.cards[1].value) ? parseInt(res.cards[1].value) : faceCards[(res.cards[1].value)]
     console.log(res)
-    // let cardValue1 = res.cards[0].value
-    // let cardValue2 = res.cards[1].value
-
-    
-    
-    
-    // if(cardValue1 === "JACK"){
-    //     return cardValue1 = 11
-    // } else if(cardValue1 === "QUEEN"){
-    //     return cardValue1 = 12
-    // } else if(cardValue1 === "KING"){
-    //     return cardValue1 = 13
-    // } else if(cardValue1 === "ACE"){
-    //     return cardValue1 = 14
-    // } else {cardValue1 = parseInt(res.cards[0].value)} 
-    
-    
-    
-    // if(cardValue2 === "JACK"){
-    //     return cardValue2 = 11
-    // } else if(cardValue2 === "QUEEN"){
-    //     return cardValue2 = 12
-    // } else if(cardValue2 === "KING"){
-    //     return cardValue2 = 13
-    // } else if(cardValue2 === "ACE"){
-    //     return cardValue2 = 14
-    // } else{cardValue2 = parseInt(res.cards[1].value)}
-    
-    
-    console.log(cardValue1)
-    console.log(cardValue1 + cardValue2)
+    if(cardValue1 > cardValue2) {
+        ++x, alert('Player 1 Wins!')
+    } else if(cardValue1 === cardValue2){
+        alert("It's a tie!")
+    } else {++y, alert('Player 2 wins!')}
+    let player1ScoreCard = document.createElement('div')
+    let player2ScoreCard  = document.createElement('div')
+    player1ScoreCard.innerText = `Player 1: ${x}`
+    player2ScoreCard.innerText = `Player 2: ${y}`
+    player1WinCounter.appendChild(player1ScoreCard)
+    player2WinCounter.appendChild(player2ScoreCard)
+    let replay = document.createElement('button')
+    playAgain.appendChild(replay)
 }
-console.log()
-request()
-
+init.addEventListener('click', request)
+playAgain.addEventListener('click', request)
 
 
 
