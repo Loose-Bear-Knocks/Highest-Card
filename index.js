@@ -2,14 +2,27 @@
 let player1 = document.getElementById('player-1')
 let player2 = document.getElementById('player-2')
 const faceCards = {"JACK": 11, "QUEEN": 12, "KING": 13, "ACE": 14}
-let playAgain = document.getElementById('play-again')
+let playAgainButton = document.getElementById('play-again')
 let x = 0
 let y = 0
 
 let player1WinCounter = document.getElementById('player-1-score')
 let player2WinCounter = document.getElementById('player-2-score')
 let init = document.getElementById('button')
+const playAgain = async () => {
+    let replay = document.createElement('button')
+    replay.innerText = 'PLAY AGIAN?'
+    replay.addEventListener('click', () => {
+        document.removeChild(makeCard1)
+        document.removeChild(makecard2)
+        request()
+    })
+    playAgainButton.appendChild(replay)
 
+
+
+    
+}
 const request = async () => {
     let req = await fetch('http://deckofcardsapi.com/api/deck/new/draw/?count=2')
     let res = await req.json()
@@ -33,11 +46,13 @@ const request = async () => {
     player2ScoreCard.innerText = `Player 2: ${y}`
     player1WinCounter.appendChild(player1ScoreCard)
     player2WinCounter.appendChild(player2ScoreCard)
-    let replay = document.createElement('button')
-    playAgain.appendChild(replay)
+    playAgain()
 }
+
+
+
 init.addEventListener('click', request)
-playAgain.addEventListener('click', request)
+
 
 
 
