@@ -151,3 +151,11 @@ body {
     justify-content: center;
     font-size: 4em;
 }
+
+.h3 {
+    text-align: center;
+    justify-content: center;
+    font-size: 2.2em;
+    animation: after-glow-text 60s infinite;
+}
+}
