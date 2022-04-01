@@ -8,6 +8,9 @@ let y = 0
 let makeCard1, makeCard2
 let cardValue1, cardValue2 
 let winner = document.getElementById("winner")
+let likeCount = document.getElementById('like-count')
+let likes = 0
+
 
 let player1WinCounter = document.getElementById('player-1-score')
 let player2WinCounter = document.getElementById('player-2-score')
@@ -21,7 +24,7 @@ player2WinCounter.appendChild(player2ScoreCard)
 const playAgain = async () => {
     let replay = document.createElement('button')
     replay.innerText = 'PLAY AGAIN?'
-    // replay.className("button")
+    replay.classList.add("button")
     replay.addEventListener('click', () => {
         player1.removeChild(makeCard1)
         player2.removeChild(makeCard2)
@@ -76,7 +79,19 @@ const request = async () => {
         //     }   
         // }
         
-        
+const like = () => {
+    let likebtn = document.getElementById('like-button')
+    likebtn.addEventListener('click', () => {
+       likes++
+       likeCount.innerHTML = likes 
+
+
+    })
+    
+
+}
+
+like()
 
 
 

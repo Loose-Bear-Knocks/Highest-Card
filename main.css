@@ -1,30 +1,153 @@
+@keyframes after-glow {
+    2.75%{box-shadow: 3px 3px goldenrod;}
+    5.5%{box-shadow: 4px 4px rgb(212, 126, 139);}
+    8.25%{box-shadow: 3px 3px rgb(216, 216, 144);}
+    11%{box-shadow: 3px 3px goldenrod;}
+    13.75%{box-shadow: 4px 4px rgb(212, 126, 139);}
+    16.5%{box-shadow: 3px 3px rgb(216, 216, 144);}
+    19.25%{box-shadow: 3px 3px goldenrod;}
+    22%{box-shadow: 4px 4px rgb(212, 126, 139);}
+    24.75%{box-shadow: 3px 3px rgb(216, 216, 144);}
+    27.5%{box-shadow: 3px 3px goldenrod;}
+    30.25%{box-shadow: 4px 4px rgb(212, 126, 139);}
+    33%{box-shadow: 3px 3px rgb(216, 216, 144);}
+    35.75%{box-shadow: 3px 3px goldenrod;}
+    38.5%{box-shadow: 4px 4px rgb(212, 126, 139);}
+    41.25%{box-shadow: 3px 3px rgb(216, 216, 144);}
+    44%{box-shadow: 3px 3px goldenrod;}
+    46.75%{box-shadow: 4px 4px rgb(212, 126, 139);}
+    49.5%{box-shadow: 3px 3px rgb(216, 216, 144);}
+    52.25%{box-shadow: 3px 3px goldenrod;}
+    55%{box-shadow: 4px 4px rgb(212, 126, 139);}
+    57.75%{box-shadow: 3px 3px rgb(216, 216, 144);}
+    60.5%{box-shadow: 3px 3px goldenrod;}
+    63.25%{box-shadow: 4px 4px rgb(212, 126, 139);}
+    66%{box-shadow: 3px 3px rgb(216, 216, 144);}
+    68.75%{box-shadow: 3px 3px goldenrod;}
+    71.5%{box-shadow: 4px 4px rgb(212, 126, 139);}
+    74.25%{box-shadow: 3px 3px rgb(216, 216, 144);}
+    77%{box-shadow: 3px 3px goldenrod;}
+    79.75%{box-shadow: 4px 4px rgb(212, 126, 139);}
+    82.5%{box-shadow: 3px 3px rgb(216, 216, 144);}
+    85.25%{box-shadow: 3px 3px goldenrod;}
+    88%{box-shadow: 4px 4px rgb(212, 126, 139);}
+    90.75%{box-shadow: 3px 3px rgb(216, 216, 144);}
+    93.5%{box-shadow: 3px 3px goldenrod;}
+    96.25%{box-shadow: 4px 4px rgb(212, 126, 139);}
+    100%{box-shadow: 3px 3px rgb(216, 216, 144);}
+}
+@keyframes after-glow-text {
+    2.75%{text-shadow: 1px 3px 3px goldenrod;}
+    5.5%{text-shadow: 1px 3px 3px rgb(212, 126, 139);}
+    8.25%{text-shadow: 1px 3px 3px rgb(216, 216, 144);}
+    11%{text-shadow: 1px 3px 3px goldenrod;}
+    13.75%{text-shadow: 1px 3px 3px rgb(212, 126, 139);}
+    16.5%{text-shadow: 1px 3px 3px rgb(216, 216, 144);}
+    19.25%{text-shadow: 1px 3px 3px goldenrod;}
+    22%{text-shadow: 1px 3px 3px rgb(212, 126, 139);}
+    24.75%{text-shadow: 1px 3px 3px rgb(216, 216, 144);}
+    27.5%{text-shadow: 1px 3px 3px goldenrod;}
+    30.25%{text-shadow: 1px 3px 3px rgb(212, 126, 139);}
+    33%{text-shadow: 1px 3px 3px rgb(216, 216, 144);}
+    35.75%{text-shadow: 1px 3px 3px goldenrod;}
+    38.5%{text-shadow: 1px 3px 3px rgb(212, 126, 139);}
+    41.25%{text-shadow: 1px 3px 3px rgb(216, 216, 144);}
+    44%{text-shadow: 1px 3px 3px goldenrod;}
+    46.75%{text-shadow: 1px 3px 3px rgb(212, 126, 139);}
+    49.5%{text-shadow: 1px 3px 3px rgb(216, 216, 144);}
+    52.25%{text-shadow: 1px 3px 3px goldenrod;}
+    55%{text-shadow: 1px 3px 3px rgb(212, 126, 139);}
+    57.75%{text-shadow: 1px 3px 3px rgb(216, 216, 144);}
+    60.5%{text-shadow: 1px 3px 3px goldenrod;}
+    63.25%{text-shadow: 1px 3px 3px rgb(212, 126, 139);}
+    66%{text-shadow: 1px 3px 3px rgb(216, 216, 144);}
+    68.75%{text-shadow: 1px 3px 3px goldenrod;}
+    71.5%{text-shadow: 1px 3px 3px rgb(212, 126, 139);}
+    74.25%{text-shadow: 1px 3px 3px rgb(216, 216, 144);}
+    77%{text-shadow: 1px 3px 3px goldenrod;}
+    79.75%{text-shadow: 1px 3px 3px rgb(212, 126, 139);}
+    82.5%{text-shadow: 1px 3px 3px rgb(216, 216, 144);}
+    85.25%{text-shadow: 1px 3px 3px goldenrod;}
+    88%{text-shadow: 1px 3px 3px rgb(212, 126, 139);}
+    90.75%{text-shadow: 1px 3px 3px rgb(216, 216, 144);}
+    93.5%{text-shadow: 1px 3px 3px goldenrod;}
+    96.25%{text-shadow: 1px 3px 3px rgb(212, 126, 139);}
+    100%{text-shadow: 1px 3px 3px rgb(216, 216, 144);}
+}
 body {
-    background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fmixkit.co%2Ffree-stock-video%2Fpoker%2F%3Fpage%3D3&psig=AOvVaw2fQhiloXR8nKUUg7wKCu49&ust=1648863945171000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCLimm4bf8fYCFQAAAAAdAAAAABAE');
+    background-image: url('https://m.media-amazon.com/images/I/91P8AuzctRL._AC_SL1500_.jpg');
+    background-image: cover;
     padding: 0 18%;
-    font-family: rubik, sans-serif;
+    font-family: poiret one, sans-serif;
+    animation: after-glow-text 60s infinite;
+}
+.h1{
+    font-family: poiret one, sans-serif;
+    font-size: 2em;
+    font-weight: 600;
+    text-align: center;
+    font-size: 75px;
+    animation: after-glow-text 60s infinite;
+}
+.button {
+    border-radius: 4px;
+    align-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: poiret one;
+    font-weight: 400;
+    animation: after-glow-text 60s infinite;
+    background-color: palegoldenrod;
 }
 .button:hover {
-    box-shadow: 2px 2px goldenrod;
+    transform: scale(1.095);
+    transition: 0.3s;
+    animation: after-glow 60s infinite;
 }
 
 .score-board {
     height: 100px;
     width: 300px;
+    font-family: poiret one;
+    font-weight: 600;
+    font-size: 1.8em;
+    animation: after-glow-text 60s infinite;
+    text-align: center;
+
 }
 
+ 
 .card-container {
     display:flex;
     justify-content: space-between;
+    
 }
 
 .container-1 {
     height: 300px;
     width: 100px;
     justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
 }
 
 .container-2 {
     height: 300px;
     width: 100px;
     justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+}
+
+.like-count {
+    font-weight: 600;
+    font-size: 2em;
+    animation: after-glow-text 60s infinite;
+}
+.title {
+    text-align: center;
+    justify-content: center;
+    font-size: 4em;
 }
