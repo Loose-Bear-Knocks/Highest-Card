@@ -1,10 +1,20 @@
 body {
-    background-color: green;
+    background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fmixkit.co%2Ffree-stock-video%2Fpoker%2F%3Fpage%3D3&psig=AOvVaw2fQhiloXR8nKUUg7wKCu49&ust=1648863945171000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCLimm4bf8fYCFQAAAAAdAAAAABAE');
+    padding: 0 18%;
+    font-family: rubik, sans-serif;
+}
+.button:hover {
+    box-shadow: 2px 2px goldenrod;
 }
 
 .score-board {
     height: 100px;
     width: 300px;
+}
+
+.card-container {
+    display:flex;
+    justify-content: space-between;
 }
 
 .container-1 {

@@ -6,6 +6,8 @@ let playAgainButton = document.getElementById('play-again')
 let x = 0
 let y = 0
 let makeCard1, makeCard2
+let cardValue1, cardValue2 
+let winner = document.getElementById("winner")
 
 let player1WinCounter = document.getElementById('player-1-score')
 let player2WinCounter = document.getElementById('player-2-score')
@@ -19,6 +21,7 @@ player2WinCounter.appendChild(player2ScoreCard)
 const playAgain = async () => {
     let replay = document.createElement('button')
     replay.innerText = 'PLAY AGAIN?'
+    // replay.className("button")
     replay.addEventListener('click', () => {
         player1.removeChild(makeCard1)
         player2.removeChild(makeCard2)
@@ -31,6 +34,10 @@ const playAgain = async () => {
 
     
 }
+
+
+
+
 const request = async () => {
     let req = await fetch('http://deckofcardsapi.com/api/deck/new/draw/?count=2')
     let res = await req.json()
@@ -44,22 +51,32 @@ const request = async () => {
     let cardValue2 = parseInt(res.cards[1].value) ? parseInt(res.cards[1].value) : faceCards[(res.cards[1].value)]
     console.log(res)
     if(cardValue1 > cardValue2) {
-        ++x, alert('Player 1 Wins!')
-        player1ScoreCard.innerText = `Player 1: ${x}`
-    } else if(cardValue1 === cardValue2){
-        alert("It's a tie!")
-    } else {++y, alert('Player 2 wins!')
-        player2ScoreCard.innerText = `Player 2: ${y}`
-    }   
-    playAgain()
-}
-
-
-
-init.addEventListener('click', request)
-
-
-
+            ++x, winner.innerText = 'Player 1 wins!'
+            player1ScoreCard.innerText = `Player 1: ${x}`
+        } else if(cardValue1 === cardValue2){
+                winner.innerText = "It's a tie!"
+            } else {++y, winner.innerText = 'Player 2 wins!'
+                player2ScoreCard.innerText = `Player 2: ${y}`
+            }   
+            playAgain()
+        }
+        
+        
+        
+        init.addEventListener('click', request)
+        
+        // const conclusion = () => {
+        //     if(cardValue1 > cardValue2) {
+        //         ++x, setTimeout(alert('Player 1 Wins!'), 5000)
+        //         player1ScoreCard.innerText = `Player 1: ${x}`
+        //     } else if(cardValue1 === cardValue2){
+        //         setTimeout(alert("It's a tie!"), 5000)
+        //     } else {++y, setTimeout(alert('Player 2 wins!'), 5000)
+        //         player2ScoreCard.innerText = `Player 2: ${y}`
+        //     }   
+        // }
+        
+        
 
 
 
